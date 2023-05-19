@@ -25,6 +25,7 @@ function App() {
   const handleSearch = event => {
     event.preventDefault();
     setCountry(event.target.value);
+    loading(true);
   };
 
   const handleClear = () => {
@@ -40,14 +41,25 @@ function App() {
         <button onClick={handleClear} className='clear'>Clear</button>
       </form>
 
-      {loading ? (
-        <p>Loading...</p>
+      { loading ? (
+        <div className='loading'>Loading...</div>
       ) : (
-        <ul>  
-          {universities.map(university => (
-            <li key={university.name}>{university.name}</li>
-          ))}
-        </ul>
+        <div className='box'>
+          {universities.length > 0 ? (
+            <ul>
+              {universities.map((university, index) => (
+                <li key={index}>
+                  <strong>Name:</strong> {university.name} <br />
+                  <strong>Country:</strong> {university.country} <br />
+                  {/* <strong>Country code:</strong> {university.alpha_two_code} <br /> */}
+                  <strong>Website:</strong> <a href={university.web_pages[0]}>{university.web_pages[0]}</a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className='no-result'>No results found</div>
+          )}
+        </div>
       )}
     </div>
   );

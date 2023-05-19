@@ -30,3 +30,19 @@ form button:hover {
 form button .clear:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+ul {
+  list-style: none;
+  padding: 10;
+  margin: 25;
+  display: grid;
+  gap: 0.5em;
+}
+
+li {
+  justify-content: space-between;
+  color: #161518;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background: #a8e8eb;
+  box-shadow: 0 0 1em #00000033;
+}
