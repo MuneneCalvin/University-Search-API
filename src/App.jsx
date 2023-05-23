@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     if (country) {
       setLoading(true);
-      fetch(`http://universities.hipolabs.com/search?country=${country}`)
+      fetch(`https://universitiesapi.onrender.com/v1/api/universities/${country}`)
         .then(response => response.json())
         .then(data => {
           setUniversities(data);
