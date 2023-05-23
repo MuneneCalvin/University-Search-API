@@ -13,7 +13,7 @@ form {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 }
 form input {
   padding: 0.5em;

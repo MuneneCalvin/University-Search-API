@@ -35,6 +35,7 @@ function App() {
 
   return (
     <div className='container'>
+      <h2>Discover Universities in the world</h2>
       <form onClick={handleSearch}>
         <input type="text" value={country} onChange={handleSearch} placeholder='Enter a country' />
         <button type="submit">Search</button>
